@@ -36,7 +36,8 @@ class UIDisclosingDisplayViewController: UIViewController {
         self.balanceLabel.setBalance(balance: 123.8432)
         print(self.balanceLabel.getBalance())
         self.setAddress(address: "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234")
-        self.setSecretViewKey(secretViewKey: "SECRETVIEWKEY") //currently breaks things
+        self.setSecretViewKey(secretViewKey: "012345678901234567890123456789012345678")
+        self.setSecretSpendKey(secretSpendKey: "012345678901234567890123456789012345678")
     }
     
     

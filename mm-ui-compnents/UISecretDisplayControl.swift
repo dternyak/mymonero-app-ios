@@ -27,10 +27,10 @@ class UISecretDisplayControl: UIButton {
     
     func toggleState() {
         
-        self.setDisplasyState(display: !self.displayState)
+        self.setDisplayState(display: !self.displayState)
     }
     
-    func setDisplasyState(display: Bool) {
+    func setDisplayState(display: Bool) {
         
         self.displayState = display
         

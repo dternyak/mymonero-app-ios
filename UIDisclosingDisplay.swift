@@ -18,5 +18,8 @@ class UIDisclosingDisplay: UIView {
         
         self.backgroundColor = UIColor.darkGray
         self.clipsToBounds = true
+        
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 8
     }
 }
