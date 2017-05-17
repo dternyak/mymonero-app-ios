@@ -18,8 +18,6 @@ class UIDisclosingDisplayViewController: UIViewController {
     
     //subviews of discloseView
     @IBOutlet weak var disclosingDisplayAddress: UILabel!
-    @IBOutlet weak var disclosingDisplaySecretViewKey: UILabel!
-    @IBOutlet weak var disclosingDisplaySecretSpendKey: UILabel!
     
     @IBOutlet weak var secretViewKeyControl: UISecretDisplayControl!
     
@@ -38,7 +36,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         self.balanceLabel.setBalance(balance: 123.8432)
         print(self.balanceLabel.getBalance())
         self.setAddress(address: "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234")
-        //self.setSecretViewKey(secretViewKey: "SECRETVIEWKEY")
+        self.setSecretViewKey(secretViewKey: "SECRETVIEWKEY") //currently breaks things
     }
     
     
@@ -50,12 +48,10 @@ class UIDisclosingDisplayViewController: UIViewController {
     }
     func setSecretViewKey (secretViewKey: String) {
         
-        self.disclosingDisplaySecretViewKey.text = secretViewKey
         self.secretViewKeyControl.setSecretKey(secret: secretViewKey)
     }
     func setSecretSpendKey (secretSpendKey: String) {
         
-        self.disclosingDisplaySecretSpendKey.text = secretSpendKey
         self.secretSpendKeyControl.setSecretKey(secret: secretSpendKey)
     }
     
