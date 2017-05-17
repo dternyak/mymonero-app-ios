@@ -28,8 +28,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcu-K2-Lch" customClass="UIDisclosingDisplay" customModule="mm_ui_compnents" customModuleProvider="target">
-                                <rect key="frame" x="16" y="222" width="343" height="63"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcu-K2-Lch" customClass="UIDisclosingDisplay" customModule="mm_ui_compnents" customModuleProvider="target">
+                                <rect key="frame" x="16" y="222" width="343" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbZ-Q4-GA8">
@@ -42,16 +42,69 @@
                                             <action selector="discloseActivated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sej-FJ-VZ7"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQX-tZ-LIq">
+                                        <rect key="frame" x="57" y="18" width="76" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5u-lw-6O4">
+                                        <rect key="frame" x="50" y="32" width="243" height="99"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Secret View Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYN-qR-1J8">
+                                        <rect key="frame" x="57" y="139" width="137" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Secret Spend Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqk-rB-odA">
+                                        <rect key="frame" x="57" y="232" width="172" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YTu-ln-XeI" customClass="UISecretDisplayControl" customModule="mm_ui_compnents" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="180" width="246" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="[Tap to Reveal]">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="secretDisplayControlToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ULY-lt-YFh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wSp-25-bPU" customClass="UISecretDisplayControl" customModule="mm_ui_compnents" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="269" width="246" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="[Tap to Reveal]">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="secretDisplayControlToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFu-O9-vTr"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.37666560913705582" green="0.37666560913705582" blue="0.37666560913705582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="balanceLabel" destination="Lov-b3-eWn" id="fJl-yU-vP9"/>
                         <outlet property="discloseControl" destination="HbZ-Q4-GA8" id="AuC-ct-MN5"/>
                         <outlet property="discloseView" destination="zcu-K2-Lch" id="oyG-Ke-Yz0"/>
+                        <outlet property="disclosingDisplayAddress" destination="I5u-lw-6O4" id="Eum-tO-2ru"/>
+                        <outlet property="secretSpendKeyControl" destination="wSp-25-bPU" id="foV-pd-wZP"/>
+                        <outlet property="secretViewKeyControl" destination="YTu-ln-XeI" id="yjO-ru-8HY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

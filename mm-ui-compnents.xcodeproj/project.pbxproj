@@ -10,6 +10,7 @@
 		C79A60371ECC600F0008418A /* UIBalanceDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79A60361ECC600F0008418A /* UIBalanceDisplay.swift */; };
 		C79A603B1ECC69820008418A /* UIDisclosingDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79A603A1ECC69820008418A /* UIDisclosingDisplay.swift */; };
 		C79A603D1ECC6ABA0008418A /* UIDisclosingDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79A603C1ECC6ABA0008418A /* UIDisclosingDisplayViewController.swift */; };
+		C79A603F1ECC941E0008418A /* UISecretDisplayControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79A603E1ECC941E0008418A /* UISecretDisplayControl.swift */; };
 		C7A5A4091ECB8E59000732FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A5A4081ECB8E59000732FA /* AppDelegate.swift */; };
 		C7A5A40E1ECB8E59000732FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A5A40C1ECB8E59000732FA /* Main.storyboard */; };
 		C7A5A4101ECB8E59000732FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A5A40F1ECB8E59000732FA /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		C79A60361ECC600F0008418A /* UIBalanceDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBalanceDisplay.swift; sourceTree = "<group>"; };
 		C79A603A1ECC69820008418A /* UIDisclosingDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDisclosingDisplay.swift; path = ../UIDisclosingDisplay.swift; sourceTree = "<group>"; };
 		C79A603C1ECC6ABA0008418A /* UIDisclosingDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDisclosingDisplayViewController.swift; sourceTree = "<group>"; };
+		C79A603E1ECC941E0008418A /* UISecretDisplayControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISecretDisplayControl.swift; sourceTree = "<group>"; };
 		C7A5A4051ECB8E59000732FA /* mm-ui-compnents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mm-ui-compnents.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A5A4081ECB8E59000732FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7A5A40D1ECB8E59000732FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				C79A603C1ECC6ABA0008418A /* UIDisclosingDisplayViewController.swift */,
 				C79A603A1ECC69820008418A /* UIDisclosingDisplay.swift */,
 				C79A60361ECC600F0008418A /* UIBalanceDisplay.swift */,
+				C79A603E1ECC941E0008418A /* UISecretDisplayControl.swift */,
 				C7A5A40F1ECB8E59000732FA /* Assets.xcassets */,
 				C7A5A4111ECB8E59000732FA /* LaunchScreen.storyboard */,
 				C7A5A4141ECB8E59000732FA /* Info.plist */,
@@ -268,6 +271,7 @@
 				C7A5A4091ECB8E59000732FA /* AppDelegate.swift in Sources */,
 				C79A603D1ECC6ABA0008418A /* UIDisclosingDisplayViewController.swift in Sources */,
 				C79A60371ECC600F0008418A /* UIBalanceDisplay.swift in Sources */,
+				C79A603F1ECC941E0008418A /* UISecretDisplayControl.swift in Sources */,
 				C79A603B1ECC69820008418A /* UIDisclosingDisplay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

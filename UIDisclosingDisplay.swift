@@ -17,5 +17,6 @@ class UIDisclosingDisplay: UIView {
     override func awakeFromNib() {
         
         self.backgroundColor = UIColor.darkGray
+        self.clipsToBounds = true
     }
 }
