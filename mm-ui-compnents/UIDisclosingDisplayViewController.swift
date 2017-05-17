@@ -17,6 +17,9 @@ class UIDisclosingDisplayViewController: UIViewController {
     @IBOutlet weak var discloseControl: UIButton!
     
     //subviews of discloseView
+    @IBOutlet weak var addressPreviewLabel: UILabel!
+    
+    
     @IBOutlet weak var disclosingDisplayAddress: UILabel!
     
     @IBOutlet weak var secretViewKeyControl: UISecretDisplayControl!
@@ -45,6 +48,8 @@ class UIDisclosingDisplayViewController: UIViewController {
     //accessors
     func setAddress (address: String) {
         
+        self.addressPreviewLabel.text = address
+        
         self.disclosingDisplayAddress.text = address
     }
     func setSecretViewKey (secretViewKey: String) {
@@ -64,11 +69,17 @@ class UIDisclosingDisplayViewController: UIViewController {
         if (disclosed) {
             
             self.discloseControl.setTitle("v", for: UIControlState.normal)
+            
+            self.addressPreviewLabel.isHidden = true
+            self.disclosingDisplayAddress.isHidden = false
         }
         
         else {
             
             self.discloseControl.setTitle(">", for: UIControlState.normal)
+            
+            self.addressPreviewLabel.isHidden = false
+            self.disclosingDisplayAddress.isHidden = true
         }
         
         self.discloseView.disclosed = disclosed

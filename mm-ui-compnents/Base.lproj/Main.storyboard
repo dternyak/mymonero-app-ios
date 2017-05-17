@@ -49,7 +49,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5u-lw-6O4">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5u-lw-6O4">
                                         <rect key="frame" x="50" y="32" width="243" height="99"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -92,6 +92,13 @@
                                             <action selector="secretDisplayControlToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFu-O9-vTr"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2P-El-aTd">
+                                        <rect key="frame" x="150" y="18" width="131" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -99,6 +106,7 @@
                         <color key="backgroundColor" red="0.37666560913705582" green="0.37666560913705582" blue="0.37666560913705582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="addressPreviewLabel" destination="W2P-El-aTd" id="ABp-11-IS0"/>
                         <outlet property="balanceLabel" destination="Lov-b3-eWn" id="fJl-yU-vP9"/>
                         <outlet property="discloseControl" destination="HbZ-Q4-GA8" id="AuC-ct-MN5"/>
                         <outlet property="discloseView" destination="zcu-K2-Lch" id="oyG-Ke-Yz0"/>
