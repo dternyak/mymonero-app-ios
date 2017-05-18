@@ -13,8 +13,7 @@ class UIDisclosingDisplay: UIView {
     
     var disclosed: Bool = false //hidden by default, so initalize with false
     
-    
-    override func awakeFromNib() {
+    func layout() {
         
         self.backgroundColor = MMDarkGray
         self.clipsToBounds = true
@@ -24,5 +23,21 @@ class UIDisclosingDisplay: UIView {
         
         self.layer.borderColor = UIColor(white: 0.3, alpha: 0.5).cgColor
         self.layer.borderWidth = 1.0
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.layout()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.layout()
+    }
+    
+    
+    override func awakeFromNib() {
+        
+        //self.layout()
     }
 }

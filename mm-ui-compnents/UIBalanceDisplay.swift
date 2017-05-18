@@ -13,7 +13,7 @@ class UIBalanceDisplay: UILabel {
     
     var _balance: CGFloat = 0.0
     
-    override func awakeFromNib() {
+    func layout() {
         
         self.font = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 36.0)
         self.backgroundColor = UIColor.gray
@@ -29,9 +29,22 @@ class UIBalanceDisplay: UILabel {
         self.layer.shadowOffset = CGSize(width: 3, height: 3)
         self.layer.shadowRadius = 7.0
         self.layer.shadowColor = UIColor.black.cgColor
- 
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.layout()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.layout()
+    }
+    
+    
+    override func awakeFromNib() {
         
-        
+        //layout()
     }
     
     func getBalance() -> CGFloat! {
