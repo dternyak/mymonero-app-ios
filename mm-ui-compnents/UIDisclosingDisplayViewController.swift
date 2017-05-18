@@ -34,13 +34,25 @@ class UIDisclosingDisplayViewController: UIViewController {
     
     func layout() {
         
+        let containerView: UIView = self.constructContainer()
+        
+        //self.constructBalanceDisplay(superview: containerView)
+        self.constructDiscloseDisplay(superview: containerView)
+    }
+    
+    func constructContainer() -> UIView {
+        
         let r: CGRect = UIScreen.main.bounds
         let w: CGFloat = r.width
         let h: CGFloat = r.height
         
         
         //create padded container for subviews
-        let borderContainer_r: CGRect = CGRect(x: r.origin.x, y: r.origin.y, width: r.width - (r.width * 0.1), height: r.height - (r.height * 0.2))
+        let borderContainer_r: CGRect = CGRect(x: r.origin.x,
+                                               y: r.origin.y,
+                                               width: r.width - (r.width * 0.1),
+                                               height: r.height - (r.height * 0.2))
+        
         let borderContainer: UIView = UIView(frame: borderContainer_r)
         borderContainer.center = CGPoint(x: w/2, y: h/2) //center in screen
         
@@ -48,13 +60,31 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         self.view.addSubview(borderContainer)
         
-        let balanceDisplay_r: CGRect = CGRect (x: 0, y: 0, width: borderContainer.bounds.width * 1.0, height: 100.0)
+        return borderContainer
+    }
+    
+    func constructBalanceDisplay(superview: UIView) {
+        
+        let balanceDisplay_r: CGRect = CGRect (x: 0, y: 0, width: superview.bounds.width * 1.0, height: 100.0)
         let balanceDisplay: UIBalanceDisplay = UIBalanceDisplay(frame: balanceDisplay_r)
-        balanceDisplay.center = CGPoint(x: borderContainer.bounds.width/2, y: balanceDisplay.bounds.height/2)
+        balanceDisplay.center = CGPoint(x: superview.bounds.width/2, y: balanceDisplay.bounds.height/2)
         
         //b.backgroundColor = UIColor.red
         
-        borderContainer.addSubview(balanceDisplay)
+        superview.addSubview(balanceDisplay)
+    }
+    
+    func constructDiscloseDisplay(superview: UIView) {
+        
+        let discloseDisplay: UIDisclosingDisplay = UIDisclosingDisplay(frame: CGRect(
+            x: 0.0,
+            y: 110.0,
+            width: superview.bounds.width,
+            height: 50.0))
+        
+        //discloseDisplay.backgroundColor = UIColor.red
+        
+        superview.addSubview(discloseDisplay)
     }
     
     
@@ -74,6 +104,10 @@ class UIDisclosingDisplayViewController: UIViewController {
         self.setAddress(address: "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234")
         self.setSecretViewKey(secretViewKey: "012345678901234567890123456789012345678")
         self.setSecretSpendKey(secretSpendKey: "012345678901234567890123456789012345678")
+        
+        //
+        
+        self.layout()
     }
     
     
@@ -122,7 +156,7 @@ class UIDisclosingDisplayViewController: UIViewController {
        
         if (!self.discloseView.disclosed) {
             
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             
             var frame: CGRect = self.discloseView.frame
             frame.size.height += 350.0
@@ -135,7 +169,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         else {
             
-            UIView.animate(withDuration: 0.2, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 
                 var frame: CGRect = self.discloseView.frame
                 frame.size.height -= 350.0
