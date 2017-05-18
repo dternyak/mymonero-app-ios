@@ -32,6 +32,32 @@ class UIDisclosingDisplayViewController: UIViewController {
     }
     
     
+    func layout() {
+        
+        let r: CGRect = UIScreen.main.bounds
+        let w: CGFloat = r.width
+        let h: CGFloat = r.height
+        
+        
+        //create padded container for subviews
+        let borderContainer_r: CGRect = CGRect(x: r.origin.x, y: r.origin.y, width: r.width - (r.width * 0.1), height: r.height - (r.height * 0.2))
+        let borderContainer: UIView = UIView(frame: borderContainer_r)
+        borderContainer.center = CGPoint(x: w/2, y: h/2) //center in screen
+        
+        borderContainer.backgroundColor = UIColor.clear
+        
+        self.view.addSubview(borderContainer)
+        
+        let balanceDisplay_r: CGRect = CGRect (x: 0, y: 0, width: borderContainer.bounds.width * 1.0, height: 100.0)
+        let balanceDisplay: UIBalanceDisplay = UIBalanceDisplay(frame: balanceDisplay_r)
+        balanceDisplay.center = CGPoint(x: borderContainer.bounds.width/2, y: balanceDisplay.bounds.height/2)
+        
+        //b.backgroundColor = UIColor.red
+        
+        borderContainer.addSubview(balanceDisplay)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
