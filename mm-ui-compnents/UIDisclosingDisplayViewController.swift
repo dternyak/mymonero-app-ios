@@ -35,8 +35,15 @@ class UIDisclosingDisplayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //layout
+        self.view.backgroundColor = MMDarkGray
+        self.addressPreviewLabel.textColor = MMLightGrayText
+        self.disclosingDisplayAddress.textColor = MMLightGrayText
+        
+        self.disclosingDisplayAddress.font = MMStandardFont
+        
         //for testing
-        self.balanceLabel.setBalance(balance: 123.8432)
+        self.balanceLabel.setBalance(balance: CGFloat(1234.567890001))
         print(self.balanceLabel.getBalance())
         self.setAddress(address: "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234")
         self.setSecretViewKey(secretViewKey: "012345678901234567890123456789012345678")

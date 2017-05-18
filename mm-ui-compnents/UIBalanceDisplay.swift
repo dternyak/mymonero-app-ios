@@ -11,25 +11,38 @@ import UIKit
 class UIBalanceDisplay: UILabel {
 
     
+    var _balance: CGFloat = 0.0
+    
     override func awakeFromNib() {
         
-        self.font = UIFont(name: "Menlo", size: 25.0)
+        self.font = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 36.0)
         self.backgroundColor = UIColor.gray
         self.textColor = UIColor.lightGray
-        self.textAlignment = NSTextAlignment.center
+        self.textAlignment = NSTextAlignment.left
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 8
+        
+        //shadow
+        
+        self.layer.shadowOpacity = 0.7
+        self.layer.shadowOffset = CGSize(width: 3, height: 3)
+        self.layer.shadowRadius = 7.0
+        self.layer.shadowColor = UIColor.black.cgColor
+ 
+        
+        
     }
     
-    func getBalance() -> Float! {
+    func getBalance() -> CGFloat! {
         
-        return Float(self.text!)
+        return self._balance
     }
     
-    func setBalance(balance: Float) {
+    func setBalance(balance: CGFloat) {
         
-        self.text = balance.description
+        self._balance = balance
+        self.text = "  " + balance.description //invisible padding
     }
 
 }

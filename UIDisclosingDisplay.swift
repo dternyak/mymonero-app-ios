@@ -16,10 +16,13 @@ class UIDisclosingDisplay: UIView {
     
     override func awakeFromNib() {
         
-        self.backgroundColor = UIColor.darkGray
+        self.backgroundColor = MMDarkGray
         self.clipsToBounds = true
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 8
+        
+        self.layer.borderColor = UIColor(white: 0.3, alpha: 0.5).cgColor
+        self.layer.borderWidth = 1.0
     }
 }
