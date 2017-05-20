@@ -41,12 +41,6 @@ class UIBalanceDisplay: UILabel {
         self.layout()
     }
     
-    
-    override func awakeFromNib() {
-        
-        //layout()
-    }
-    
     func getBalance() -> CGFloat! {
         
         return self._balance

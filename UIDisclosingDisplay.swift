@@ -14,6 +14,34 @@ class UIDisclosingDisplay: UIView {
     
     var disclosed: Bool = false //hidden by default, so initalize with false
     
+    
+    var addressLabel: UILabel! //impilicitly unwrapped optionals since in swift on-optional values must be non-nil at super.init
+    //and common initalizers are not yet possible
+    var fullAddress: UILabel!
+    var copyAddress: UIButton!
+    
+    var viewKeyLabel: UILabel!
+    var fullSecretViewKeyControl: UISecretDisplayControl!
+    var copySecretViewKey: UIButton!
+    
+    var spendKeyLabel: UILabel!
+    var fullSecretSpendKeyControl: UISecretDisplayControl!
+    var copySecretSpendKey: UIButton!
+    
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
+        generateDisclosingDisplayViews()
+        layout()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+        generateDisclosingDisplayViews()
+        layout()
+    }
+    
     func generateDisclosingDisplayViews() {
         
         let w: CGFloat = self.bounds.size.width
@@ -31,61 +59,61 @@ class UIDisclosingDisplay: UIView {
         
         
         //monero address
-        let addressLabel: UILabel = UILabel(frame: CGRect(x: 0.0,
+        self.addressLabel = UILabel(frame: CGRect(x: 0.0,
                                                           y: 0.0,
                                                           width: 100.0,
                                                           height: 30.0))
-        addressLabel.text = "Address"
-        container.addSubview(addressLabel)
+        self.addressLabel.text = "Address"
+        container.addSubview(self.addressLabel)
         
-        let copyAddress: UIButton = UIButton(frame: CGRect(x: container.bounds.size.width - buttonDimensions.size.width,
+        self.copyAddress = UIButton(frame: CGRect(x: container.bounds.size.width - buttonDimensions.size.width,
                                                            y: 0.0,
                                                            width: buttonDimensions.size.width,
                                                            height: buttonDimensions.size.height))
-        container.addSubview(copyAddress)
+        container.addSubview(self.copyAddress)
         
         
         
-        let fullAddress: UILabel = UILabel(frame: CGRect(x: 0.0,
+        self.fullAddress = UILabel(frame: CGRect(x: 0.0,
                                                          y: addressLabel.bounds.size.height + paddingSize,
                                                          width: container.bounds.width,
                                                          height: 30.0))
-        container.addSubview(fullAddress)
+        container.addSubview(self.fullAddress)
         
        
         //monero secret view key
-        let viewKeyLabel: UILabel = UILabel(frame: CGRect(x: 0.0,
+        self.viewKeyLabel = UILabel(frame: CGRect(x: 0.0,
                                                           y: fullAddress.frame.origin.y + fullAddress.bounds.size.height + paddingSize,
                                                           width: 100.0,
                                                           height: 30.0))
         container.addSubview(viewKeyLabel)
         
-        let copySecretViewKey: UIButton = UIButton(frame: CGRect(x: container.bounds.size.width - buttonDimensions.size.width,
+        self.copySecretViewKey = UIButton(frame: CGRect(x: container.bounds.size.width - buttonDimensions.size.width,
                                                                  y: viewKeyLabel.frame.origin.y,
                                                                  width: buttonDimensions.size.width,
                                                                  height: buttonDimensions.size.height))
         container.addSubview(copySecretViewKey)
         
-        let fullSecretViewKeyControl: UISecretDisplayControl = UISecretDisplayControl(frame: CGRect(x:0.0,
+        self.fullSecretViewKeyControl = UISecretDisplayControl(frame: CGRect(x:0.0,
                                                                                              y: viewKeyLabel.frame.origin.y + viewKeyLabel.bounds.size.height + paddingSize,
                                                                                              width: container.bounds.width,
                                                                                              height: 30.0))
         
         //monero secret spend key
         
-        let spendKeyLabel: UILabel = UILabel(frame: CGRect(x: 0.0,
+        self.spendKeyLabel = UILabel(frame: CGRect(x: 0.0,
                                                           y: fullSecretViewKeyControl.frame.origin.y + fullAddress.bounds.size.height + paddingSize,
                                                           width: 100.0,
                                                           height: 30.0))
         container.addSubview(spendKeyLabel)
         
-        let copySecretSpendKey: UIButton = UIButton(frame: CGRect(x: container.bounds.size.width - buttonDimensions.size.width,
+        self.copySecretSpendKey = UIButton(frame: CGRect(x: container.bounds.size.width - buttonDimensions.size.width,
                                                                  y: spendKeyLabel.frame.origin.y,
                                                                  width: buttonDimensions.size.width,
                                                                  height: buttonDimensions.size.height))
         container.addSubview(copySecretSpendKey)
         
-        let fullSecretSpendKeyControl: UISecretDisplayControl = UISecretDisplayControl(frame: CGRect(x:0.0,
+        self.fullSecretSpendKeyControl = UISecretDisplayControl(frame: CGRect(x:0.0,
                                                                                                     y: spendKeyLabel.frame.origin.y + viewKeyLabel.bounds.size.height + paddingSize,
                                                                                                     width: container.bounds.width,
                                                                                                     height: 30.0))
@@ -115,14 +143,9 @@ class UIDisclosingDisplay: UIView {
         
     }
     
-    override func layoutSubviews() {
-        
-        self.generateDisclosingDisplayViews()
-    }
-    
     func layout() {
         
-        self.backgroundColor = MMDarkGray
+        self.backgroundColor = UIColor.red
         self.clipsToBounds = true
         
         self.layer.masksToBounds = true
@@ -132,19 +155,5 @@ class UIDisclosingDisplay: UIView {
         self.layer.borderWidth = 1.0
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.layout()
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.layout()
-    }
-    
-    
-    override func awakeFromNib() {
-        
-        //self.layout()
-    }
 }
