@@ -55,7 +55,7 @@ class UIDisclosingDisplay: UIView {
         self.addSubview(container)
         
         let paddingSize: CGFloat = 20.0
-        let buttonDimensions: CGRect = CGRect(x: 0.0, y: 0.0, width: 70.0, height: 20.0)
+        let buttonDimensions: CGRect = CGRect(x: 0.0, y: 0.0, width: 70.0, height: 30.0)
         
         
         //monero address
@@ -144,6 +144,20 @@ class UIDisclosingDisplay: UIView {
         
     }
     
+    func layoutCopyControl(control: UIButton) {
+        
+        control.setTitle("COPY", for: UIControlState.normal)
+        control.setTitleColor(MMLightBlue, for: UIControlState.normal)
+        control.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
+    }
+    
+    func layoutLabel(label: UILabel) {
+        
+        label.textColor = UIColor.white
+        label.font = UIFont.boldSystemFont(ofSize: 14.0)
+        label.backgroundColor = UIColor.black
+    }
+    
     func layout() {
         
         self.backgroundColor = UIColor.red
@@ -159,13 +173,13 @@ class UIDisclosingDisplay: UIView {
         self.viewKeyLabel.text = "Secret View Key"
         self.spendKeyLabel.text = "Secret Spend Key"
         
-        self.addressLabel.textColor = UIColor.white
-        self.viewKeyLabel.textColor = UIColor.white
-        self.spendKeyLabel.textColor = UIColor.white
+        self.layoutLabel(label: self.addressLabel)
+        self.layoutLabel(label: self.viewKeyLabel)
+        self.layoutLabel(label: self.spendKeyLabel)
         
-        self.copyAddress.setTitle("COPY", for: UIControlState.normal)
-        self.copySecretViewKey.setTitle("COPY", for: UIControlState.normal)
-        self.copySecretSpendKey.setTitle("COPY", for: UIControlState.normal)
+        self.layoutCopyControl(control: self.copyAddress)
+        self.layoutCopyControl(control: self.copySecretViewKey)
+        self.layoutCopyControl(control: self.copySecretSpendKey)
     }
     
     
