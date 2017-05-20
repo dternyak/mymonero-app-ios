@@ -40,8 +40,8 @@ class UIDisclosingDisplayViewController: UIViewController {
         //test
         self.setAddress(address: "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234")
         self.balanceDisplay.setBalance(balance: 111.999)
-        self.setSecretViewKey(secretViewKey: "012345678901234567890123456789012345678")
-        self.setSecretSpendKey(secretSpendKey: "012345678901234567890123456789012345678")
+        self.setSecretViewKey(secretViewKey: "0123456789012345678901234567890123456789")
+        self.setSecretSpendKey(secretSpendKey: "0123456789012345678901234567890123456789")
     }
     
     func initControls() {

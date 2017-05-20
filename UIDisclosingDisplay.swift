@@ -77,7 +77,7 @@ class UIDisclosingDisplay: UIView {
         self.fullAddress = UILabel(frame: CGRect(x: 0.0,
                                                          y: addressLabel.bounds.size.height + paddingSize,
                                                          width: container.bounds.width,
-                                                         height: 30.0))
+                                                         height: 50.0))
         container.addSubview(self.fullAddress)
         
        
@@ -180,6 +180,12 @@ class UIDisclosingDisplay: UIView {
         self.layoutCopyControl(control: self.copyAddress)
         self.layoutCopyControl(control: self.copySecretViewKey)
         self.layoutCopyControl(control: self.copySecretSpendKey)
+        
+        self.fullAddress.lineBreakMode = NSLineBreakMode.byCharWrapping
+        self.fullSecretViewKeyControl.titleLabel?.lineBreakMode = NSLineBreakMode.byCharWrapping
+        self.fullSecretSpendKeyControl.titleLabel?.lineBreakMode = NSLineBreakMode.byCharWrapping
+        
+        fullAddress.numberOfLines = 3
     }
     
     
