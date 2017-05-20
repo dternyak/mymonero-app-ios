@@ -35,11 +35,21 @@ class UIDisclosingDisplayViewController: UIViewController {
         self.discloseDisplay.fullAddress.textColor = MMLightGrayText
         self.discloseDisplay.fullAddress.font = MMStandardFont
         
+        self.initControls()
+        
         //test
         self.setAddress(address: "TESTADDRESS")
         self.balanceDisplay.setBalance(balance: 111.999)
         self.setSecretViewKey(secretViewKey: "012345678901234567890123456789012345678")
         self.setSecretSpendKey(secretSpendKey: "012345678901234567890123456789012345678")
+    }
+    
+    func initControls() {
+        
+        self.discloseDisplay.fullSecretViewKeyControl.addTarget(self,
+                                                          action: #selector(UIDisclosingDisplayViewController.secretDisplayControlToggled(_:)), for: .touchUpInside)
+        self.discloseDisplay.fullSecretSpendKeyControl.addTarget(self,
+                                                                action: #selector(UIDisclosingDisplayViewController.secretDisplayControlToggled(_:)), for: .touchUpInside)
     }
     
     
@@ -81,7 +91,7 @@ class UIDisclosingDisplayViewController: UIViewController {
     
     func constructBalanceDisplay(superview: UIView) {
         
-        let balanceDisplay_r: CGRect = CGRect (x: 0, y: 0, width: superview.bounds.width * 1.0, height: 100.0)
+        let balanceDisplay_r: CGRect = CGRect (x: 0, y: 0, width: superview.bounds.width * 1.0, height: 80.0)
         self.balanceDisplay = UIBalanceDisplay(frame: balanceDisplay_r)
         balanceDisplay.center = CGPoint(x: superview.bounds.width/2, y: balanceDisplay.bounds.height/2)
         
@@ -94,7 +104,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         
          self.discloseDisplay = UIDisclosingDisplay(frame: CGRect(
             x: 0.0,
-            y: 110.0,
+            y: 100.0,
             width: superview.bounds.width,
             height: 400.0))
         

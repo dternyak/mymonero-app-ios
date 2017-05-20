@@ -159,6 +159,10 @@ class UIDisclosingDisplay: UIView {
         self.viewKeyLabel.text = "Secret View Key"
         self.spendKeyLabel.text = "Secret Spend Key"
         
+        self.addressLabel.textColor = UIColor.white
+        self.viewKeyLabel.textColor = UIColor.white
+        self.spendKeyLabel.textColor = UIColor.white
+        
         self.copyAddress.setTitle("COPY", for: UIControlState.normal)
         self.copySecretViewKey.setTitle("COPY", for: UIControlState.normal)
         self.copySecretSpendKey.setTitle("COPY", for: UIControlState.normal)
