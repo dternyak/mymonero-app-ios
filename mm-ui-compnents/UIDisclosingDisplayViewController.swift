@@ -44,12 +44,41 @@ class UIDisclosingDisplayViewController: UIViewController {
         self.setSecretSpendKey(secretSpendKey: "0123456789012345678901234567890123456789")
     }
     
+    func copyCC(_ sender: UIButton) {
+        
+        if(sender == self.discloseDisplay.copyAddress) {
+            
+            print("COPY ADDRESS") //for testing
+            UIPasteboard.general.string = self.discloseDisplay.fullAddress.text
+            print(UIPasteboard.general.string as String!)
+        }
+        
+        else if (sender == self.discloseDisplay.copySecretViewKey) {
+        
+            print("COPY SECRET VIEW KEY")
+            UIPasteboard.general.string = self.discloseDisplay.fullSecretViewKeyControl.titleLabel?.text
+        }
+        
+        else if (sender == self.discloseDisplay.copySecretSpendKey) {
+            
+            print("COPY SECRET SPEND KEY")
+            UIPasteboard.general.string = self.discloseDisplay.fullSecretSpendKeyControl.titleLabel?.text
+        }
+    }
+    
     func initControls() {
         
         self.discloseDisplay.fullSecretViewKeyControl.addTarget(self,
                                                           action: #selector(UIDisclosingDisplayViewController.secretDisplayControlToggled(_:)), for: .touchUpInside)
         self.discloseDisplay.fullSecretSpendKeyControl.addTarget(self,
                                                                 action: #selector(UIDisclosingDisplayViewController.secretDisplayControlToggled(_:)), for: .touchUpInside)
+        
+        self.discloseDisplay.copyAddress.addTarget(self,
+                                                   action: #selector(UIDisclosingDisplayViewController.copyCC(_:)), for: .touchUpInside)
+        self.discloseDisplay.copySecretViewKey.addTarget(self,
+                                                   action: #selector(UIDisclosingDisplayViewController.copyCC(_:)), for: .touchUpInside)
+        self.discloseDisplay.copySecretSpendKey.addTarget(self,
+                                                         action: #selector(UIDisclosingDisplayViewController.copyCC(_:)), for: .touchUpInside)
     }
     
     
