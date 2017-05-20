@@ -57,12 +57,14 @@ class UIDisclosingDisplayViewController: UIViewController {
         
             print("COPY SECRET VIEW KEY")
             UIPasteboard.general.string = self.discloseDisplay.fullSecretViewKeyControl.titleLabel?.text
+            print(UIPasteboard.general.string as String!)
         }
         
         else if (sender == self.discloseDisplay.copySecretSpendKey) {
             
             print("COPY SECRET SPEND KEY")
             UIPasteboard.general.string = self.discloseDisplay.fullSecretSpendKeyControl.titleLabel?.text
+            print(UIPasteboard.general.string as String!)
         }
     }
     
