@@ -15,21 +15,11 @@ class UIDisclosingDisplayViewController: UIViewController {
     var discloseDisplay: UIDisclosingDisplay!
     //
     
-    //@IBOutlet weak var balanceLabel: UIBalanceDisplay!
-
     //discloseView
-    //@IBOutlet weak var discloseView: UIDisclosingDisplay!
     //@IBOutlet weak var discloseControl: UIButton!
     
     //subviews of discloseView
     //@IBOutlet weak var addressPreviewLabel: UILabel!
-    
-    
-    //@IBOutlet weak var disclosingDisplayAddress: UILabel!
-    
-    //@IBOutlet weak var secretViewKeyControl: UISecretDisplayControl!
-    
-    //@IBOutlet weak var secretSpendKeyControl: UISecretDisplayControl!
     @IBAction func secretDisplayControlToggled(_ sender: UISecretDisplayControl) {
         
         
@@ -42,11 +32,14 @@ class UIDisclosingDisplayViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.layout()
         
-        print(self.discloseDisplay)
-        self.discloseDisplay.addressLabel.textColor = MMLightGrayText
-        //self.discloseDisplay.addressLabel.text = "TEST"
+        self.discloseDisplay.fullAddress.textColor = MMLightGrayText
+        self.discloseDisplay.fullAddress.font = MMStandardFont
+        
+        //test
         self.setAddress(address: "TESTADDRESS")
         self.balanceDisplay.setBalance(balance: 111.999)
+        self.setSecretViewKey(secretViewKey: "012345678901234567890123456789012345678")
+        self.setSecretSpendKey(secretSpendKey: "012345678901234567890123456789012345678")
     }
     
     
@@ -143,19 +136,18 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         //self.addressPreviewLabel.text = address
         
-        //self.disclosingDisplayAddress.text = address
-        //print(self.discloseDisplay.addressLabel)
-        self.discloseDisplay.addressLabel.text = address
+        //self.discloseDisplay.addressLabel.text = address
+        self.discloseDisplay.fullAddress.text = address
         
         
     }
     func setSecretViewKey (secretViewKey: String) {
         
-        //self.secretViewKeyControl.setSecretKey(secret: secretViewKey)
+        self.discloseDisplay.fullSecretViewKeyControl.setSecretKey(secret: secretViewKey)
     }
     func setSecretSpendKey (secretSpendKey: String) {
         
-        //self.secretSpendKeyControl.setSecretKey(secret: secretSpendKey)
+        self.discloseDisplay.fullSecretSpendKeyControl.setSecretKey(secret: secretSpendKey)
     }
     
     

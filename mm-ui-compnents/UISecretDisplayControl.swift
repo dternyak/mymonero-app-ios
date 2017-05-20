@@ -15,13 +15,30 @@ class UISecretDisplayControl: UIButton {
     var secretKey: String = "INITSECRETKEY"
    
     
-    override func awakeFromNib() {
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
         
         //layout & display
         self.setTitleColor(MMLightGrayText, for: UIControlState.normal)
         
         self.titleLabel?.font = MMStandardFont
+        
+        self.setDisplayState(display: false)
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
+    
+    /*override func awakeFromNib() {
+        
+     //layout & display
+     self.setTitleColor(MMLightGrayText, for: UIControlState.normal)
+     
+     self.titleLabel?.font = MMStandardFont
+    }*/
     
     func setSecretKey(secret: String) {
         

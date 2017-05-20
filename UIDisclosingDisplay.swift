@@ -61,7 +61,7 @@ class UIDisclosingDisplay: UIView {
         //monero address
         self.addressLabel = UILabel(frame: CGRect(x: 0.0,
                                                           y: 0.0,
-                                                          width: 100.0,
+                                                          width: 200.0,
                                                           height: 30.0))
         self.addressLabel.text = "Address"
         container.addSubview(self.addressLabel)
@@ -84,7 +84,7 @@ class UIDisclosingDisplay: UIView {
         //monero secret view key
         self.viewKeyLabel = UILabel(frame: CGRect(x: 0.0,
                                                           y: fullAddress.frame.origin.y + fullAddress.bounds.size.height + paddingSize,
-                                                          width: 100.0,
+                                                          width: 200.0,
                                                           height: 30.0))
         container.addSubview(viewKeyLabel)
         
@@ -98,12 +98,13 @@ class UIDisclosingDisplay: UIView {
                                                                                              y: viewKeyLabel.frame.origin.y + viewKeyLabel.bounds.size.height + paddingSize,
                                                                                              width: container.bounds.width,
                                                                                              height: 30.0))
+         container.addSubview(fullSecretViewKeyControl)
         
         //monero secret spend key
         
         self.spendKeyLabel = UILabel(frame: CGRect(x: 0.0,
                                                           y: fullSecretViewKeyControl.frame.origin.y + fullAddress.bounds.size.height + paddingSize,
-                                                          width: 100.0,
+                                                          width: 200.0,
                                                           height: 30.0))
         container.addSubview(spendKeyLabel)
         
@@ -123,7 +124,7 @@ class UIDisclosingDisplay: UIView {
 
         
         
-        container.addSubview(fullSecretViewKeyControl)
+       
         
         //testing
         
@@ -153,6 +154,14 @@ class UIDisclosingDisplay: UIView {
         
         self.layer.borderColor = UIColor(white: 0.3, alpha: 0.5).cgColor
         self.layer.borderWidth = 1.0
+        
+        self.addressLabel.text = "Address"
+        self.viewKeyLabel.text = "Secret View Key"
+        self.spendKeyLabel.text = "Secret Spend Key"
+        
+        self.copyAddress.setTitle("COPY", for: UIControlState.normal)
+        self.copySecretViewKey.setTitle("COPY", for: UIControlState.normal)
+        self.copySecretSpendKey.setTitle("COPY", for: UIControlState.normal)
     }
     
     

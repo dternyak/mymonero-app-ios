@@ -38,6 +38,7 @@ class UIBalanceDisplay: UILabel {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        fatalError("NOT_IMPLEMENTED") //REFACTOR
         self.layout()
     }
     
