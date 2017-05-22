@@ -13,7 +13,7 @@ class UIDisclosingDisplayViewController: UIViewController {
     //
     var balanceDisplay: UIBalanceDisplay!
     var discloseDisplay: UIDisclosingDisplay!
-    var discloseControl: UIButton!
+    
     //
     
     //discloseView
@@ -83,7 +83,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         self.discloseDisplay.copySecretSpendKey.addTarget(self,
                                                          action: #selector(UIDisclosingDisplayViewController.copyCC(_:)), for: .touchUpInside)
         
-        self.discloseControl.addTarget(self, action: #selector(UIDisclosingDisplayViewController.discloseActivated(_:)), for: .touchUpInside)
+        self.discloseDisplay.discloseControl.addTarget(self, action: #selector(UIDisclosingDisplayViewController.discloseActivated(_:)), for: .touchUpInside)
     }
     
     
@@ -99,8 +99,8 @@ class UIDisclosingDisplayViewController: UIViewController {
         self.constructBalanceDisplay(superview: containerView)
         self.constructDiscloseDisplay(superview: containerView)
         
-        self.constructControls(superview: self.discloseDisplay) /*add discloseControl to discloseDisplay rather than the container
-                                                                        superview*/
+        /*self.constructControls(superview: self.discloseDisplay) /*add discloseControl to discloseDisplay rather than the container
+                                                                        superview*/*/
 
     }
     
@@ -127,18 +127,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         return borderContainer
     }
     
-    func constructControls(superview: UIView) {
-        
-        self.discloseControl = UIButton(frame: CGRect(x: 0.0,
-                                                      y: 0.0,
-                                                      width: 20.0,
-                                                      height: 20.0))
-        self.discloseControl.setTitle("X", for: UIControlState.normal)
-        
-        self.discloseControl.backgroundColor = UIColor.magenta
-        
-        superview.addSubview(self.discloseControl)
-    }
+    
     
     func constructBalanceDisplay(superview: UIView) {
         
@@ -221,7 +210,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         if (disclosed) {
             
-            self.discloseControl.setTitle("v", for: UIControlState.normal)
+            self.discloseDisplay.discloseControl.setTitle("v", for: UIControlState.normal)
             
             //self.addressPreviewLabel.isHidden = true
             //self.disclosingDisplayAddress.isHidden = false
@@ -229,7 +218,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         else {
             
-            self.discloseControl.setTitle(">", for: UIControlState.normal)
+            self.discloseDisplay.discloseControl.setTitle(">", for: UIControlState.normal)
             
             //self.addressPreviewLabel.isHidden = false
             //self.disclosingDisplayAddress.isHidden = true
@@ -245,7 +234,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             
             var frame: CGRect = self.discloseDisplay.frame
-            frame.size.height += 350.0
+            frame.size.height += 350.0 //refactor to resize to original height
             self.discloseDisplay.frame = frame
         })
             
@@ -258,7 +247,7 @@ class UIDisclosingDisplayViewController: UIViewController {
             UIView.animate(withDuration: 0.3, animations: {
                 
                 var frame: CGRect = self.discloseDisplay.frame
-                frame.size.height -= 350.0
+                frame.size.height -= 350.0 //refactor to resize to original height
                 self.discloseDisplay.frame = frame
             })
             

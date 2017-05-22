@@ -28,6 +28,8 @@ class UIDisclosingDisplay: UIView {
     var fullSecretSpendKeyControl: UISecretDisplayControl!
     var copySecretSpendKey: UIButton!
     
+    var discloseControl: UIButton!
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -37,6 +39,8 @@ class UIDisclosingDisplay: UIView {
         /*var f: CGRect = self.frame
         f.size.height = 50.0
         self.frame = f*/
+        
+        
         
         self.frame.size.height = 50.0 //refactor
         /*set the height of the discloseDisplay to the undisclosed height after initalization, to allow subviews to
@@ -50,12 +54,32 @@ class UIDisclosingDisplay: UIView {
         layout()
     }
     
+    func constructControls(container: UIView) {
+        
+        let w: CGFloat = 20.0
+        let h: CGFloat = 20.0
+        
+        self.discloseControl = UIButton(frame: CGRect(x: ((container.frame.origin.x / 2) - w/2 ),
+                                                      y: container.frame.origin.y, /*refactor (remove this comment - no longer necessary)
+             container.center.y - (container.frame.size.height / 2)
+             use center + height to calculate the origin for the disclose control to be in line with the top of the
+ container, as the container's position is set with the centre property to allow it to be in the middle of the superview, and this
+ causes the frame.origin to be off*/
+                                                      width: w,
+                                                      height: h))
+        self.discloseControl.setTitle("X", for: UIControlState.normal)
+        
+        self.discloseControl.backgroundColor = UIColor.magenta
+        
+        self.addSubview(self.discloseControl)
+    }
+    
     func generateDisclosingDisplayViews() {
         
         let w: CGFloat = self.bounds.size.width
         let h: CGFloat = self.bounds.size.height
         
-        let container: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: w - (w * 0.1), height: h - (h * 0.1)))
+        let container: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: w - (w * 0.2), height: h - (h * 0.1)))
         container.center = CGPoint(x: w/2, y: h/2) //center in screen
         
         container.backgroundColor = UIColor.cyan
@@ -149,6 +173,9 @@ class UIDisclosingDisplay: UIView {
         copySecretSpendKey.backgroundColor = UIColor.orange
         
         
+        
+        //not testing
+        constructControls(container: container)
         
     }
     
