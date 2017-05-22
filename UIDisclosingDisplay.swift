@@ -33,6 +33,14 @@ class UIDisclosingDisplay: UIView {
         super.init(frame: frame)
         generateDisclosingDisplayViews()
         layout()
+        
+        /*var f: CGRect = self.frame
+        f.size.height = 50.0
+        self.frame = f*/
+        
+        self.frame.size.height = 50.0 //refactor
+        /*set the height of the discloseDisplay to the undisclosed height after initalization, to allow subviews to
+            be initalized based on the full disclosed height of the view*/
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,7 +58,7 @@ class UIDisclosingDisplay: UIView {
         let container: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: w - (w * 0.1), height: h - (h * 0.1)))
         container.center = CGPoint(x: w/2, y: h/2) //center in screen
         
-        container.backgroundColor = UIColor.clear
+        container.backgroundColor = UIColor.cyan
         
         self.addSubview(container)
         

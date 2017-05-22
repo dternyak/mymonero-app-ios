@@ -13,6 +13,7 @@ class UIDisclosingDisplayViewController: UIViewController {
     //
     var balanceDisplay: UIBalanceDisplay!
     var discloseDisplay: UIDisclosingDisplay!
+    var discloseControl: UIButton!
     //
     
     //discloseView
@@ -81,6 +82,8 @@ class UIDisclosingDisplayViewController: UIViewController {
                                                    action: #selector(UIDisclosingDisplayViewController.copyCC(_:)), for: .touchUpInside)
         self.discloseDisplay.copySecretSpendKey.addTarget(self,
                                                          action: #selector(UIDisclosingDisplayViewController.copyCC(_:)), for: .touchUpInside)
+        
+        self.discloseControl.addTarget(self, action: #selector(UIDisclosingDisplayViewController.discloseActivated(_:)), for: .touchUpInside)
     }
     
     
@@ -95,6 +98,10 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         self.constructBalanceDisplay(superview: containerView)
         self.constructDiscloseDisplay(superview: containerView)
+        
+        self.constructControls(superview: self.discloseDisplay) /*add discloseControl to discloseDisplay rather than the container
+                                                                        superview*/
+
     }
     
     func constructContainer() -> UIView {
@@ -113,11 +120,24 @@ class UIDisclosingDisplayViewController: UIViewController {
         let borderContainer: UIView = UIView(frame: borderContainer_r)
         borderContainer.center = CGPoint(x: w/2, y: h/2) //center in screen
         
-        borderContainer.backgroundColor = UIColor.clear
+        borderContainer.backgroundColor = UIColor.yellow
         
         self.view.addSubview(borderContainer)
         
         return borderContainer
+    }
+    
+    func constructControls(superview: UIView) {
+        
+        self.discloseControl = UIButton(frame: CGRect(x: 0.0,
+                                                      y: 0.0,
+                                                      width: 20.0,
+                                                      height: 20.0))
+        self.discloseControl.setTitle("X", for: UIControlState.normal)
+        
+        self.discloseControl.backgroundColor = UIColor.magenta
+        
+        superview.addSubview(self.discloseControl)
     }
     
     func constructBalanceDisplay(superview: UIView) {
@@ -137,7 +157,7 @@ class UIDisclosingDisplayViewController: UIViewController {
             x: 0.0,
             y: 100.0,
             width: superview.bounds.width,
-            height: 400.0))
+            height: 500.0)) //refactor so height is dynamically determined
         
         self.discloseDisplay.backgroundColor = UIColor.red
         
@@ -151,7 +171,10 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         //layout
         self.view.backgroundColor = MMDarkGray
-        
+        /*self.discloseDisplay.frame = CGRect(x: self.discloseDisplay.frame.origin.x,
+                                            y: self.discloseDisplay.frame.origin.y,
+                                            width: self.discloseDisplay.frame.size.width,
+                                            height: 50.0)*/
         //self.discloseDisplay.addressLabel.textColor = MMLightGrayText
         //self.addressPreviewLabel.textColor = MMLightGrayText
         //self.disclosingDisplayAddress.textColor = MMLightGrayText
@@ -198,7 +221,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         if (disclosed) {
             
-            //self.discloseControl.setTitle("v", for: UIControlState.normal)
+            self.discloseControl.setTitle("v", for: UIControlState.normal)
             
             //self.addressPreviewLabel.isHidden = true
             //self.disclosingDisplayAddress.isHidden = false
@@ -206,7 +229,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         else {
             
-            //self.discloseControl.setTitle(">", for: UIControlState.normal)
+            self.discloseControl.setTitle(">", for: UIControlState.normal)
             
             //self.addressPreviewLabel.isHidden = false
             //self.disclosingDisplayAddress.isHidden = true
