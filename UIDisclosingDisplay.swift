@@ -57,7 +57,7 @@ class UIDisclosingDisplay: UIView {
     func constructControls(container: UIView) {
         
         let w: CGFloat = 20.0
-        let h: CGFloat = 20.0
+        let h: CGFloat = 30.0
         
         self.discloseControl = UIButton(frame: CGRect(x: ((container.frame.origin.x / 2) - w/2 ),
                                                       y: container.frame.origin.y, /*refactor (remove this comment - no longer necessary)
@@ -69,7 +69,7 @@ class UIDisclosingDisplay: UIView {
                                                       height: h))
         self.discloseControl.setTitle("X", for: UIControlState.normal)
         
-        self.discloseControl.backgroundColor = UIColor.magenta
+//        self.discloseControl.backgroundColor = UIColor.magenta
         
         self.addSubview(self.discloseControl)
     }
@@ -79,14 +79,14 @@ class UIDisclosingDisplay: UIView {
         let w: CGFloat = self.bounds.size.width
         let h: CGFloat = self.bounds.size.height
         
-        let container: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: w - (w * 0.2), height: h - (h * 0.1)))
+        let container: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: w - (w * 0.2), height: h - (h * 0.05)))
         container.center = CGPoint(x: w/2, y: h/2) //center in screen
         
-        container.backgroundColor = UIColor.cyan
+        container.backgroundColor = MMDarkGray
         
         self.addSubview(container)
         
-        let paddingSize: CGFloat = 20.0
+        let paddingSize: CGFloat = 10.0
         let buttonDimensions: CGRect = CGRect(x: 0.0, y: 0.0, width: 70.0, height: 30.0)
         
         
@@ -190,7 +190,7 @@ class UIDisclosingDisplay: UIView {
         
         label.textColor = UIColor.white
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
-        label.backgroundColor = UIColor.black
+//        label.backgroundColor = UIColor.black
     }
     
     func layout() {

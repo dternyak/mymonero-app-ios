@@ -120,7 +120,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         let borderContainer: UIView = UIView(frame: borderContainer_r)
         borderContainer.center = CGPoint(x: w/2, y: h/2) //center in screen
         
-        borderContainer.backgroundColor = UIColor.yellow
+        borderContainer.backgroundColor = MMDarkGray
         
         self.view.addSubview(borderContainer)
         
@@ -148,7 +148,7 @@ class UIDisclosingDisplayViewController: UIViewController {
             width: superview.bounds.width,
             height: 500.0)) //refactor so height is dynamically determined
         
-        self.discloseDisplay.backgroundColor = UIColor.red
+        self.discloseDisplay.backgroundColor = MMDarkGray
         
         superview.addSubview(self.discloseDisplay)
         
