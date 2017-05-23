@@ -79,8 +79,11 @@ class UIDisclosingDisplay: UIView {
         let w: CGFloat = self.bounds.size.width
         let h: CGFloat = self.bounds.size.height
         
-        let container: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: w - (w * 0.2), height: h - (h * 0.05)))
+        let container: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: w - (w * 0.175), height: h - (h * 0.05)))
         container.center = CGPoint(x: w/2, y: h/2) //center in screen
+        
+        container.frame.origin.x = self.bounds.width - (container.bounds.width + 15.0) //align to right of container
+        /*possible refactor to use paddingSize*/
         
         container.backgroundColor = MMDarkGray
         
@@ -160,17 +163,17 @@ class UIDisclosingDisplay: UIView {
         
         //testing
         
-        addressLabel.backgroundColor = UIColor.red
-        fullAddress.backgroundColor = UIColor.purple
-        copyAddress.backgroundColor = UIColor.orange
-        
-        viewKeyLabel.backgroundColor = UIColor.red
-        fullSecretViewKeyControl.backgroundColor = UIColor.purple
-        copySecretViewKey.backgroundColor = UIColor.orange
-        
-        spendKeyLabel.backgroundColor = UIColor.red
-        fullSecretSpendKeyControl.backgroundColor = UIColor.purple
-        copySecretSpendKey.backgroundColor = UIColor.orange
+//        addressLabel.backgroundColor = UIColor.red
+//        fullAddress.backgroundColor = UIColor.purple
+//        copyAddress.backgroundColor = UIColor.orange
+//        
+//        viewKeyLabel.backgroundColor = UIColor.red
+//        fullSecretViewKeyControl.backgroundColor = UIColor.purple
+//        copySecretViewKey.backgroundColor = UIColor.orange
+//        
+//        spendKeyLabel.backgroundColor = UIColor.red
+//        fullSecretSpendKeyControl.backgroundColor = UIColor.purple
+//        copySecretSpendKey.backgroundColor = UIColor.orange
         
         
         
@@ -184,6 +187,7 @@ class UIDisclosingDisplay: UIView {
         control.setTitle("COPY", for: UIControlState.normal)
         control.setTitleColor(MMLightBlue, for: UIControlState.normal)
         control.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
+        control.contentHorizontalAlignment = UIControlContentHorizontalAlignment.right
     }
     
     func layoutLabel(label: UILabel) {
