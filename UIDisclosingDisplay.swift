@@ -118,7 +118,7 @@ class UIDisclosingDisplay: UIView {
        
         //monero secret view key
         self.viewKeyLabel = UILabel(frame: CGRect(x: 0.0,
-                                                          y: fullAddress.frame.origin.y + fullAddress.bounds.size.height + paddingSize,
+                                                          y: fullAddress.frame.origin.y + fullAddress.bounds.size.height + (paddingSize * 3),
                                                           width: 200.0,
                                                           height: 30.0))
         container.addSubview(viewKeyLabel)
@@ -138,7 +138,7 @@ class UIDisclosingDisplay: UIView {
         //monero secret spend key
         
         self.spendKeyLabel = UILabel(frame: CGRect(x: 0.0,
-                                                          y: fullSecretViewKeyControl.frame.origin.y + fullSecretViewKeyControl.bounds.size.height + paddingSize,
+                                                          y: fullSecretViewKeyControl.frame.origin.y + fullSecretViewKeyControl.bounds.size.height + (paddingSize * 3),
                                                           width: 200.0,
                                                           height: 30.0))
         container.addSubview(spendKeyLabel)
