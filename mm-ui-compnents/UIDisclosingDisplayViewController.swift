@@ -14,13 +14,6 @@ class UIDisclosingDisplayViewController: UIViewController {
     var balanceDisplay: UIBalanceDisplay!
     var discloseDisplay: UIDisclosingDisplay!
     
-    //
-    
-    //discloseView
-    //@IBOutlet weak var discloseControl: UIButton!
-    
-    //subviews of discloseView
-    //@IBOutlet weak var addressPreviewLabel: UILabel!
     @IBAction func secretDisplayControlToggled(_ sender: UISecretDisplayControl) {
         
         
@@ -98,10 +91,6 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         self.constructBalanceDisplay(superview: containerView)
         self.constructDiscloseDisplay(superview: containerView)
-        
-        /*self.constructControls(superview: self.discloseDisplay) /*add discloseControl to discloseDisplay rather than the container
-                                                                        superview*/*/
-
     }
     
     func constructContainer() -> UIView {
@@ -160,26 +149,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         //layout
         self.view.backgroundColor = MMDarkGray
-        /*self.discloseDisplay.frame = CGRect(x: self.discloseDisplay.frame.origin.x,
-                                            y: self.discloseDisplay.frame.origin.y,
-                                            width: self.discloseDisplay.frame.size.width,
-                                            height: 50.0)*/
-        //self.discloseDisplay.addressLabel.textColor = MMLightGrayText
-        //self.addressPreviewLabel.textColor = MMLightGrayText
-        //self.disclosingDisplayAddress.textColor = MMLightGrayText
-        
-        //self.disclosingDisplayAddress.font = MMStandardFont
-        
-        //for testing
-        //self.balanceLabel.setBalance(balance: CGFloat(1234.567890001))
-        //print(self.balanceLabel.getBalance())
-        ///self.setAddress(address: "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234")
-        //self.setSecretViewKey(secretViewKey: "012345678901234567890123456789012345678")
-        //self.setSecretSpendKey(secretSpendKey: "012345678901234567890123456789012345678")
-        
-        //
-        
-        //self.layout()
+
     }
     
     
@@ -187,9 +157,7 @@ class UIDisclosingDisplayViewController: UIViewController {
     //accessors
     func setAddress (address: String) {
         
-        //self.addressPreviewLabel.text = address
-        
-        //self.discloseDisplay.addressLabel.text = address
+
         self.discloseDisplay.fullAddress.text = address
         
         
@@ -211,17 +179,13 @@ class UIDisclosingDisplayViewController: UIViewController {
         if (disclosed) {
             
             self.discloseDisplay.discloseControl.setTitle("v", for: UIControlState.normal)
-            
-            //self.addressPreviewLabel.isHidden = true
-            //self.disclosingDisplayAddress.isHidden = false
         }
         
         else {
             
             self.discloseDisplay.discloseControl.setTitle(">", for: UIControlState.normal)
             
-            //self.addressPreviewLabel.isHidden = false
-            //self.disclosingDisplayAddress.isHidden = true
+
         }
         
         self.discloseDisplay.disclosed = disclosed

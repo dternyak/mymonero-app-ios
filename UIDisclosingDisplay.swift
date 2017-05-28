@@ -60,16 +60,10 @@ class UIDisclosingDisplay: UIView {
         let h: CGFloat = 30.0
         
         self.discloseControl = UIButton(frame: CGRect(x: ((container.frame.origin.x / 2) - w/2 ),
-                                                      y: container.frame.origin.y, /*refactor (remove this comment - no longer necessary)
-             container.center.y - (container.frame.size.height / 2)
-             use center + height to calculate the origin for the disclose control to be in line with the top of the
- container, as the container's position is set with the centre property to allow it to be in the middle of the superview, and this
- causes the frame.origin to be off*/
+                                                      y: container.frame.origin.y,
                                                       width: w,
                                                       height: h))
-        self.discloseControl.setTitle("X", for: UIControlState.normal)
-        
-//        self.discloseControl.backgroundColor = UIColor.magenta
+        self.discloseControl.setTitle(">", for: UIControlState.normal)
         
         self.addSubview(self.discloseControl)
     }
@@ -83,7 +77,6 @@ class UIDisclosingDisplay: UIView {
         container.center = CGPoint(x: w/2, y: h/2) //center in screen
         
         container.frame.origin.x = self.bounds.width - (container.bounds.width + 15.0) //align to right of container
-        /*possible refactor to use paddingSize*/
         
         container.backgroundColor = MMDarkGray
         
@@ -159,25 +152,6 @@ class UIDisclosingDisplay: UIView {
 
         
         
-       
-        
-        //testing
-        
-//        addressLabel.backgroundColor = UIColor.red
-//        fullAddress.backgroundColor = UIColor.purple
-//        copyAddress.backgroundColor = UIColor.orange
-//        
-//        viewKeyLabel.backgroundColor = UIColor.red
-//        fullSecretViewKeyControl.backgroundColor = UIColor.purple
-//        copySecretViewKey.backgroundColor = UIColor.orange
-//        
-//        spendKeyLabel.backgroundColor = UIColor.red
-//        fullSecretSpendKeyControl.backgroundColor = UIColor.purple
-//        copySecretSpendKey.backgroundColor = UIColor.orange
-        
-        
-        
-        //not testing
         constructControls(container: container)
         
     }
@@ -194,9 +168,8 @@ class UIDisclosingDisplay: UIView {
         
         label.textColor = UIColor.white
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
-//        label.backgroundColor = UIColor.black
-    }
     
+    }
     func layout() {
         
         self.backgroundColor = UIColor.red
@@ -225,7 +198,7 @@ class UIDisclosingDisplay: UIView {
         self.fullSecretSpendKeyControl.titleLabel?.lineBreakMode = NSLineBreakMode.byCharWrapping
         
         fullAddress.numberOfLines = 3
-    }
+        }
     
     
 }

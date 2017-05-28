@@ -32,13 +32,6 @@ class UISecretDisplayControl: UIButton {
         super.init(coder: aDecoder)
     }
     
-    /*override func awakeFromNib() {
-        
-     //layout & display
-     self.setTitleColor(MMLightGrayText, for: UIControlState.normal)
-     
-     self.titleLabel?.font = MMStandardFont
-    }*/
     
     func setSecretKey(secret: String) {
         
