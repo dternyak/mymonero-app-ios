@@ -8,7 +8,7 @@ The controller code is mostly present, but cosmetic changes still need to be mad
 
 -adding a box shadow to several elements (since this is frequently required throughout the app, my intention was to
 write a custom UIView subclass that draws a shadow around the view. Note that it's a bit more complex because of masking conflicts
-between the shadow & rounded rect (in essence, clipping to the rounded rect removes the shadow) but it's entirely possible.
+between the shadow & rounded rect (in essence, clipping to the rounded rect removes the shadow) but it's entirely possible).
 I'd use UIBezierPath.
 
 -including external resources from the js project (fonts/disclosure arrow). fixing colours to be exactly the same.
@@ -20,14 +20,14 @@ Usage:
 
 Keys:
 
-UIDisplayViewController.setAddress()
-UIDisplayViewController.setSecretViewKey()
-UIDisplayViewController.setSecretSpendKey()
+UIDisplayViewController.setAddress()  
+UIDisplayViewController.setSecretViewKey()  
+UIDisplayViewController.setSecretSpendKey()  
 
 Balance:
 
-UIDisplayViewController.balanceDisplay.setBalance()
-UIDisplayViewController.balanceDisplay.setBalance()
+UIDisplayViewController.balanceDisplay.setBalance()  
+UIDisplayViewController.balanceDisplay.setBalance()  
 
 
 
