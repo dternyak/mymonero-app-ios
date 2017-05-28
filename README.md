@@ -26,7 +26,7 @@ UIDisplayViewController.setSecretSpendKey()
 
 Balance:
 
-UIDisplayView.balanceDisplay.setBalance()
+UIDisplayViewController.balanceDisplay.setBalance()
 UIDisplayViewController.balanceDisplay.setBalance()
 
 
