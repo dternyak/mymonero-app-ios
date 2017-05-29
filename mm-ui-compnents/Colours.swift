@@ -3,7 +3,6 @@
 //  mm-ui-compnents
 //
 //  Created by RedLion on 18/05/17.
-//  Copyright © 2017 RedLion. All rights reserved.
 //
 
 import Foundation
