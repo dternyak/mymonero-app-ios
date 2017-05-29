@@ -104,7 +104,7 @@ class UIDisclosingDisplay: UIView {
         
         self.fullAddress = UILabel(frame: CGRect(x: 0.0,
                                                          y: addressLabel.bounds.size.height + paddingSize,
-                                                         width: container.bounds.width,
+                                                         width: container.bounds.width - 10.0,
                                                          height: 50.0))
         container.addSubview(self.fullAddress)
         
@@ -124,7 +124,7 @@ class UIDisclosingDisplay: UIView {
         
         self.fullSecretViewKeyControl = UISecretDisplayControl(frame: CGRect(x:0.0,
                                                                                              y: viewKeyLabel.frame.origin.y + viewKeyLabel.bounds.size.height + paddingSize,
-                                                                                             width: container.bounds.width,
+                                                                                             width: container.bounds.width - 10.0,
                                                                                              height: 30.0))
          container.addSubview(fullSecretViewKeyControl)
         
@@ -144,7 +144,7 @@ class UIDisclosingDisplay: UIView {
         
         self.fullSecretSpendKeyControl = UISecretDisplayControl(frame: CGRect(x:0.0,
                                                                                                     y: spendKeyLabel.frame.origin.y + spendKeyLabel.bounds.size.height + paddingSize,
-                                                                                                    width: container.bounds.width,
+                                                                                                    width: container.bounds.width - 10.0,
                                                                                                     height: 30.0))
         container.addSubview(fullSecretSpendKeyControl)
 
