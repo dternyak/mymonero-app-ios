@@ -67,7 +67,7 @@ class UIDisclosingDisplay: UIView {
  causes the frame.origin to be off*/
                                                       width: w,
                                                       height: h))
-        self.discloseControl.setTitle("X", for: UIControlState.normal)
+        self.discloseControl.setTitle(">", for: UIControlState.normal)
         
 //        self.discloseControl.backgroundColor = UIColor.magenta
         
