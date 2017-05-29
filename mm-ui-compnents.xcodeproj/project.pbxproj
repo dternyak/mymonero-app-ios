@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C707645A1ECD81D600B712A8 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70764591ECD81D600B712A8 /* Colours.swift */; };
+		C7923EC81EDC08ED005D14BA /* Native-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7923EC51EDC08ED005D14BA /* Native-Bold.otf */; };
+		C7923EC91EDC08ED005D14BA /* Native-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7923EC61EDC08ED005D14BA /* Native-Light.otf */; };
+		C7923ECA1EDC08ED005D14BA /* Native-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7923EC71EDC08ED005D14BA /* Native-Regular.otf */; };
 		C79A60371ECC600F0008418A /* UIBalanceDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79A60361ECC600F0008418A /* UIBalanceDisplay.swift */; };
 		C79A603B1ECC69820008418A /* UIDisclosingDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79A603A1ECC69820008418A /* UIDisclosingDisplay.swift */; };
 		C79A603D1ECC6ABA0008418A /* UIDisclosingDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79A603C1ECC6ABA0008418A /* UIDisclosingDisplayViewController.swift */; };
@@ -39,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		C70764591ECD81D600B712A8 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		C7923EC51EDC08ED005D14BA /* Native-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Native-Bold.otf"; sourceTree = "<group>"; };
+		C7923EC61EDC08ED005D14BA /* Native-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Native-Light.otf"; sourceTree = "<group>"; };
+		C7923EC71EDC08ED005D14BA /* Native-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Native-Regular.otf"; sourceTree = "<group>"; };
 		C79A60361ECC600F0008418A /* UIBalanceDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBalanceDisplay.swift; sourceTree = "<group>"; };
 		C79A603A1ECC69820008418A /* UIDisclosingDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDisclosingDisplay.swift; path = ../UIDisclosingDisplay.swift; sourceTree = "<group>"; };
 		C79A603C1ECC6ABA0008418A /* UIDisclosingDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDisclosingDisplayViewController.swift; sourceTree = "<group>"; };
@@ -82,9 +88,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7923ECB1EDC0900005D14BA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C7923EC51EDC08ED005D14BA /* Native-Bold.otf */,
+				C7923EC61EDC08ED005D14BA /* Native-Light.otf */,
+				C7923EC71EDC08ED005D14BA /* Native-Regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		C7A5A3FC1ECB8E59000732FA = {
 			isa = PBXGroup;
 			children = (
+				C7923ECB1EDC0900005D14BA /* Fonts */,
 				C7A5A4071ECB8E59000732FA /* mm-ui-compnents */,
 				C7A5A41C1ECB8E59000732FA /* mm-ui-compnentsTests */,
 				C7A5A4271ECB8E59000732FA /* mm-ui-compnentsUITests */,
@@ -247,6 +264,9 @@
 				C7A5A4131ECB8E59000732FA /* LaunchScreen.storyboard in Resources */,
 				C7A5A4101ECB8E59000732FA /* Assets.xcassets in Resources */,
 				C7A5A40E1ECB8E59000732FA /* Main.storyboard in Resources */,
+				C7923ECA1EDC08ED005D14BA /* Native-Regular.otf in Resources */,
+				C7923EC91EDC08ED005D14BA /* Native-Light.otf in Resources */,
+				C7923EC81EDC08ED005D14BA /* Native-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

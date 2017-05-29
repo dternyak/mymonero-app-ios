@@ -16,8 +16,8 @@ class UIBalanceDisplay: UILabel {
     func layout() {
         
         self.font = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 36.0)
-        self.backgroundColor = UIColor.gray
-        self.textColor = UIColor.lightGray
+        self.backgroundColor = balanceLabelColour
+        self.textColor = UIColor.white
         self.textAlignment = NSTextAlignment.left
         
         self.layer.masksToBounds = true

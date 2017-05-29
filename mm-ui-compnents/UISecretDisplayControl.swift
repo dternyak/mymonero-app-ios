@@ -22,7 +22,7 @@ class UISecretDisplayControl: UIButton {
         //layout & display
         self.setTitleColor(MMLightGrayText, for: UIControlState.normal)
         
-        self.titleLabel?.font = MMStandardFont
+        self.titleLabel?.font = MMLightFont
         
         self.setDisplayState(display: false)
     }
