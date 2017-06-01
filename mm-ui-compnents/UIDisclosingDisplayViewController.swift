@@ -3,7 +3,6 @@
 //  mm-ui-compnents
 //
 //  Created by RedLion on 17/05/17.
-//  Copyright © 2017 RedLion. All rights reserved.
 //
 
 import UIKit
@@ -27,7 +26,8 @@ class UIDisclosingDisplayViewController: UIViewController {
         self.layout()
         
         self.discloseDisplay.fullAddress.textColor = MMLightGrayText
-        self.discloseDisplay.fullAddress.font = MMStandardFont
+        self.discloseDisplay.fullAddress.font = MMLightFont
+        self.discloseDisplay.fullAddress.font.withSize(14.0)
         
         self.initControls()
         
@@ -120,7 +120,7 @@ class UIDisclosingDisplayViewController: UIViewController {
     
     func constructBalanceDisplay(superview: UIView) {
         
-        let balanceDisplay_r: CGRect = CGRect (x: 0, y: 0, width: superview.bounds.width * 1.0, height: 75.0)
+        let balanceDisplay_r: CGRect = CGRect (x: 0, y: 0, width: superview.bounds.width * 1.0, height: 70.0)
         self.balanceDisplay = UIBalanceDisplay(frame: balanceDisplay_r)
         balanceDisplay.center = CGPoint(x: superview.bounds.width/2, y: balanceDisplay.bounds.height/2)
         
@@ -195,7 +195,7 @@ class UIDisclosingDisplayViewController: UIViewController {
        
         if (!self.discloseDisplay.disclosed) {
             
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.35, animations: {
             
             var frame: CGRect = self.discloseDisplay.frame
             frame.size.height += 350.0 //refactor to resize to original height
@@ -208,7 +208,7 @@ class UIDisclosingDisplayViewController: UIViewController {
         
         else {
             
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.35, animations: {
                 
                 var frame: CGRect = self.discloseDisplay.frame
                 frame.size.height -= 350.0 //refactor to resize to original height

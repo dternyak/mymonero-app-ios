@@ -3,8 +3,6 @@
 //  mm-ui-compnents
 //
 //  Created by RedLion on 17/05/17.
-//  Copyright © 2017 RedLion. All rights reserved.
-//
 
 import UIKit
 
@@ -16,8 +14,8 @@ class UIBalanceDisplay: UILabel {
     func layout() {
         
         self.font = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 36.0)
-        self.backgroundColor = UIColor.gray
-        self.textColor = UIColor.lightGray
+        self.backgroundColor = balanceLabelColour
+        self.textColor = UIColor.white
         self.textAlignment = NSTextAlignment.left
         
         self.layer.masksToBounds = true
